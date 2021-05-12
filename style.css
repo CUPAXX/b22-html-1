@@ -1,25 +1,124 @@
+body{
+    background-color: rgb(37, 37, 37);
+}
 
 .papan {
     display: grid;
-    grid-template-columns: repeat(9,50px);
-    grid-template-rows: repeat(9, 50px);
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
     justify-content: center;
     margin: auto;
     padding-top: 50px;
 }
+
 .papan div {
     border: 1px solid black;
-}
-.papan div:nth-child(odd) {
-    background-color: rgb(185, 48, 48);
-}
-.papan div:nth-child(even) {
-    background-color: rgb(40, 40, 194);
+    background-color: rgb(241, 187, 151);
 }
 
-.papan div:nth-child(odd):hover {
+/* set gelap */
+.papan div:nth-child(-n + 8):nth-child(even),
+.papan div:nth-child(n + 8):nth-child(-n + 16):nth-child(odd),
+.papan div:nth-child(n + 17):nth-child(-n + 24):nth-child(even),
+.papan div:nth-child(n + 25):nth-child(-n + 32):nth-child(odd),
+.papan div:nth-child(n + 33):nth-child(-n + 40):nth-child(even),
+.papan div:nth-child(n + 41):nth-child(-n + 48):nth-child(odd),
+.papan div:nth-child(n + 49):nth-child(-n + 56):nth-child(even),
+.papan div:nth-child(n + 57):nth-child(-n + 64):nth-child(odd) {
+    background-color: rgb(116, 62, 0);
+}
+
+/* hover terang */
+.papan div:hover {
+    background-color: white;
+}
+
+/* hover gelap */
+.papan div:nth-child(-n + 8):nth-child(even):hover,
+.papan div:nth-child(n + 8):nth-child(-n + 16):nth-child(odd):hover,
+.papan div:nth-child(n + 17):nth-child(-n + 24):nth-child(even):hover,
+.papan div:nth-child(n + 25):nth-child(-n + 32):nth-child(odd):hover,
+.papan div:nth-child(n + 33):nth-child(-n + 40):nth-child(even):hover,
+.papan div:nth-child(n + 41):nth-child(-n + 48):nth-child(odd):hover,
+.papan div:nth-child(n + 49):nth-child(-n + 56):nth-child(even):hover,
+.papan div:nth-child(n + 57):nth-child(-n + 64):nth-child(odd):hover {
     background-color: black;
 }
-.papan div:nth-child(even):hover {
-    background-color: white;
+
+/* size anak catur */
+.papan div::before{
+    font-size: 30px;
+    padding-left: 9px;
+}
+
+/* warna anak putih */
+.papan div:nth-child(n + 49)::before {
+    color: white;
+}
+
+/* bidak hitam */
+.papan div:nth-child(9)::before, :nth-child(10)::before,
+        :nth-child(11)::before, :nth-child(12)::before,
+        :nth-child(13)::before, :nth-child(14)::before,
+        :nth-child(15)::before, :nth-child(16)::before {
+    content: "\265F";
+}
+
+/* bidak putih */
+.papan div:nth-child(56)::before, :nth-child(55)::before,
+        :nth-child(54)::before, :nth-child(53)::before,
+        :nth-child(52)::before, :nth-child(51)::before,
+        :nth-child(50)::before, :nth-child(49)::before {
+    content: "\2659";
+}
+
+/* benteng hitam */
+.papan div:nth-child(1)::before, :nth-child(8)::before{
+    content: "\265C";
+
+}
+
+/* benteng putih */
+.papan div:nth-child(64)::before, :nth-child(57)::before{
+    content: "\2656";
+}
+
+/* kuda hitam*/
+.papan div:nth-child(2)::before, :nth-child(7)::before{
+    content: "\265E";
+}
+
+/* kuda putih*/
+.papan div:nth-child(63)::before, :nth-child(58)::before{
+    content: "\2658";
+}
+
+/* mentri hitam */
+.papan div:nth-child(3)::before, :nth-child(6)::before{
+    content: "\265D";
+}
+
+/* mentri putih */
+.papan div:nth-child(62)::before, :nth-child(59)::before{
+    content: "\2657";
+}
+
+/* ratu hitam */
+.papan div:nth-child(4)::before{
+    content: "\265B";
+}
+
+/* ratu putih */
+.papan div:nth-child(60)::before{
+    content: "\265B";
+}
+
+/* raja hitam */
+.papan div:nth-child(5)::before{
+    content: "\265A";
+}
+
+/* raja putih */
+.papan div:nth-child(61)::before{
+    content: "\2654";
 }
